@@ -32,7 +32,6 @@ select = [
     "SIM",     # flake8-simplify rules
     "T201",    # print-found
     "TRY400",  # error-instead-of-exception
-    "TRY401",  # verbose-log-message
     "UP",      # pyupgrade rules
     "W191",    # tab-indentation
     "W605",    # invalid-escape-sequence

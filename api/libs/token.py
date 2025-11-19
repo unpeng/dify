@@ -113,27 +113,27 @@ def set_access_token_to_cookie(request: Request, response: Response, token: str,
     )
 
 
-def set_refresh_token_to_cookie(request: Request, response: Response, token: str):
+def set_refresh_token_to_cookie(request: Request, response: Response, token: str, samesite: str = "Lax"):
     response.set_cookie(
         _real_cookie_name(COOKIE_NAME_REFRESH_TOKEN),
         value=token,
         httponly=True,
         domain=_cookie_domain(),
         secure=is_secure(),
-        samesite="Lax",
+        samesite=samesite,
         max_age=int(60 * 60 * 24 * dify_config.REFRESH_TOKEN_EXPIRE_DAYS),
         path="/",
     )
 
 
-def set_csrf_token_to_cookie(request: Request, response: Response, token: str):
+def set_csrf_token_to_cookie(request: Request, response: Response, token: str, samesite: str = "Lax"):
     response.set_cookie(
         _real_cookie_name(COOKIE_NAME_CSRF_TOKEN),
         value=token,
         httponly=False,
         domain=_cookie_domain(),
         secure=is_secure(),
-        samesite="Lax",
+        samesite=samesite,
         max_age=int(60 * dify_config.ACCESS_TOKEN_EXPIRE_MINUTES),
         path="/",
     )

@@ -11,6 +11,7 @@ from .deploy import DeploymentConfig
 from .enterprise import EnterpriseFeatureConfig
 from .extra import ExtraServiceConfig
 from .feature import FeatureConfig
+from .iframe_config import IframeConfig
 from .middleware import MiddlewareConfig
 from .observability import ObservabilityConfig
 from .packaging import PackagingInfo
@@ -62,6 +63,8 @@ class DifyConfig(
     DeploymentConfig,
     # Feature configs
     FeatureConfig,
+    # Iframe configs
+    IframeConfig,
     # Middleware configs
     MiddlewareConfig,
     # Extra service configs
